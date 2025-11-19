@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherMe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo">WeatherMe</div>
+                <div class="time" id="current-time">--:--</div>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab active">Today</button>
+                <button class="tab">Tomorrow</button>
+                <button class="tab">Monthly Forecast</button>
+            </div>
+        </div>
+
+        <div class="controls-row">
+            <div class="temp-toggle">
+                <button class="unit-btn active" onclick="toggleTemp('C')">°C</button>
+                <button class="unit-btn" onclick="toggleTemp('F')">°F</button>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-bar">
+                <button id="search-btn" class="search-icon-btn">🔍</button>
+                <input type="text" id="location-search" placeholder="Search location...">
+            </div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="side-card left"></div>
+
+            <div class="main-card">
+                <div class="card-top">
+                    <div class="location-wrapper">
+                        <span id="location">Loading...</span>
+                        <span class="pin-icon">📍</span>
+                    </div>
+                    
+                    <div class="temp-wrapper">
+                        <span class="thermometer">🌡️</span>
+                        <span id="temperature">--</span>
+                        <span class="main-icon" id="weather-icon">☁️</span>
+                    </div>
+                    <div class="date" id="date">--</div>
+                </div>
+
+                <div class="card-details">
+                    <div class="detail-item">
+                        <div class="label">HUMIDITY</div>
+                        <div class="value" id="humidity">--%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">VISIBILITY</div>
+                        <div class="value" id="visibility">--km</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">AIR PRESSURE</div>
+                        <div class="value" id="pressure">--hPa</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">WIND</div>
+                        <div class="value" id="wind">--</div>
+                    </div>
+                </div>
+                
+                <span class="nav-arrow prev">❮</span>
+                <span class="nav-arrow next">❯</span>
+            </div>
+
+            <div class="side-card right"></div>
+        </div>
+
+        <div class="hourly-forecast" id="hourly-forecast">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
